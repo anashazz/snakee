@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snakee by Anas Hafeez</title>
+    <title>Snake: The Finale</title>
     
+    <!-- Favicon for GitHub Pages/Browser Tab (NEW) -->
+    <link rel="icon" type="image/png" href="snakee-logo.png">
+
     <!-- Link to the custom CSS file -->
     <link rel="stylesheet" href="styles.css">
     
@@ -19,6 +22,9 @@
     <!-- Live Score Counter -->
     <div id="live-score">SCORE: 0</div>
     
+    <!-- High Score Display (NEW) -->
+    <div id="high-score">HIGH SCORE: 0</div>
+    
     <!-- Settings Button and Dropdown Menu -->
     <div id="settings-container">
         <!-- Icon-only settings button -->
@@ -27,13 +33,12 @@
             <div class="setting-group">
                 <label for="speed-setting">Speed</label>
                 <select id="speed-setting" class="setting-control" onchange="applySettings()">
-                    <option value="200">Slow (5 FPS)</option>
-                    <option value="150" selected>Normal (6 FPS)</option>
-                    <option value="100">Fast (10 FPS)</option>
-                    <option value="50">Extreme (20 FPS)</option>
-                    <!-- NEW MODES ADDED HERE -->
-                    <option value="33">Ultra (30 FPS)</option>
-                    <option value="17">Insane (60 FPS)</option>
+                    <option value="200">Cruise (5 FPS)</option>
+                    <option value="150" selected>Turbo (6 FPS)</option>
+                    <option value="100">Warp Speed (10 FPS)</option>
+                    <option value="50">Hyperspace (20 FPS)</option>
+                    <option value="33">Light Speed (30 FPS)</option>
+                    <option value="17">Maximum Overdrive (60 FPS)</option>
                 </select>
             </div>
             
@@ -41,10 +46,10 @@
             <div class="setting-group">
                 <label for="accent-color-setting">Head/Score Color</label>
                 <select id="accent-color-setting" class="setting-control" onchange="applySettings()">
-                    <option value="#00ff00" selected>Neon Green</option>
-                    <option value="#00aaff">Laser Blue</option>
-                    <option value="#ff00ff">Fuchsia Pink</option>
-                    <option value="#ffcc00">Arcade Yellow</option>
+                    <option value="#00ff00" selected>Plasma Green</option>
+                    <option value="#00aaff">Electric Blue</option>
+                    <option value="#ff00ff">Cyber Pink</option>
+                    <option value="#ffcc00">Arcade Gold</option>
                 </select>
             </div>
             
@@ -52,10 +57,10 @@
             <div class="setting-group">
                 <label for="body-color-setting">Body Color</label>
                 <select id="body-color-setting" class="setting-control" onchange="applySettings()">
-                    <option value="#00cc00" selected>Dark Green</option>
-                    <option value="#0088cc">Dark Blue</option>
-                    <option value="#cc00cc">Dark Pink</option>
-                    <option value="#ffa500">Orange</option>
+                    <option value="#00cc00" selected>Hacker's Shadow</option>
+                    <option value="#0088cc">Deep Circuit</option>
+                    <option value="#cc00cc">Matrix Violet</option>
+                    <option value="#ffa500">Toxic Slime</option>
                 </select>
             </div>
             
@@ -63,10 +68,10 @@
             <div class="setting-group">
                 <label for="food-color-setting">Normal Food</label>
                 <select id="food-color-setting" class="setting-control" onchange="applySettings()">
-                    <option value="#ff4d4d" selected>Emergency Red</option>
-                    <option value="#f0e68c">Khaki Yellow</option>
-                    <option value="#00ff00">Bright Green</option>
-                    <option value="#ffffff">White Dot</option>
+                    <option value="#ff4d4d" selected>Critical Red</option>
+                    <option value="#f0e68c">Data Khaki</option>
+                    <option value="#00ff00">Bio Hazard</option>
+                    <option value="#ffffff">Ghost Pellet</option>
                 </select>
             </div>
 
@@ -88,4 +93,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
