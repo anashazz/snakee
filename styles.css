@@ -1,0 +1,161 @@
+/* CRITICAL: Ensures HTML and Body occupy 100% of the viewport and disables scrolling */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-color: #0d1117; /* Dark background */
+}
+
+body {
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center; /* Centers the canvas horizontally */
+    align-items: center; /* Centers the canvas vertically */
+}
+
+/* Live Score Display */
+#live-score {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    color: #00ff00; /* Neon green (default, overwritten by JS) */
+    font-size: 2rem;
+    z-index: 200; 
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
+}
+
+/* Canvas styling - the main game screen */
+#gameCanvas {
+    background-color: #0d1117;
+    touch-action: none; 
+    display: block; 
+}
+
+/* Game Over message */
+#message {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #ff4d4d;
+    border-radius: 0px; 
+    text-align: center;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    z-index: 100;
+}
+
+#message.active {
+    display: flex;
+}
+
+/* General Restart Button Styling (Pill-shaped) */
+.restart-button {
+    margin-top: 20px;
+    padding: 10px 30px; 
+    background-color: #00cc00; /* Base color, overwritten by JS */
+    color: #0d1117;
+    border: none;
+    border-radius: 9999px; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px #009900; /* Base shadow, overwritten by JS */
+}
+
+.restart-button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px var(--shadow-color, #009900); /* Uses CSS variable or base */
+}
+
+/* --- Settings Menu Styling --- */
+
+#settings-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 300;
+}
+
+#settings-btn {
+    /* Kept padding generous for touch target */
+    padding: 8px 15px; 
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #00ff00; /* Uses JS ACCENT_COLOR */
+    border: 2px solid #00ff00; /* Uses JS ACCENT_COLOR */
+    border-radius: 9999px;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Uses JS ACCENT_COLOR */
+    transition: all 0.1s;
+}
+
+#settings-btn:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+/* Dropdown Menu */
+#settings-menu {
+    position: absolute;
+    top: 100%; /* Position below the button */
+    right: 0;
+    width: 300px;
+    margin-top: 10px;
+    background-color: rgba(13, 17, 23, 0.95); /* Dark background */
+    border: 2px solid #ff4d4d; /* Red accent border */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+    color: #00ff00; /* Uses JS ACCENT_COLOR */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.setting-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    flex-wrap: wrap; /* Allow wrapping for better mobile layout */
+}
+
+.setting-group label {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-right: 10px;
+    min-width: 100px;
+}
+
+.setting-control {
+    font-family: 'VT323', monospace;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #00cc00;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    cursor: pointer;
+    box-shadow: none;
+    transition: all 0.1s;
+}
+
+.restart-setting-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #ff4d4d;
+    border-color: #cc3939;
+    color: #0d1117;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
+

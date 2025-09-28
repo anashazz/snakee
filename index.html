@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snakee by Anas Hafeez</title>
+    
+    <!-- Link to the custom CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font for retro feel -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for gear icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Live Score Counter -->
+    <div id="live-score">SCORE: 0</div>
+    
+    <!-- Settings Button and Dropdown Menu -->
+    <div id="settings-container">
+        <!-- Icon-only settings button -->
+        <button id="settings-btn" onclick="toggleSettingsMenu()"><i class="fas fa-cog"></i></button>
+        <div id="settings-menu" class="hidden">
+            <div class="setting-group">
+                <label for="speed-setting">Speed</label>
+                <select id="speed-setting" class="setting-control" onchange="applySettings()">
+                    <option value="200">Slow (5 FPS)</option>
+                    <option value="150" selected>Normal (6 FPS)</option>
+                    <option value="100">Fast (10 FPS)</option>
+                    <option value="50">Extreme (20 FPS)</option>
+                    <!-- NEW MODES ADDED HERE -->
+                    <option value="33">Ultra (30 FPS)</option>
+                    <option value="17">Insane (60 FPS)</option>
+                </select>
+            </div>
+            
+            <!-- Dropdown Selector for Accent/Head Color -->
+            <div class="setting-group">
+                <label for="accent-color-setting">Head/Score Color</label>
+                <select id="accent-color-setting" class="setting-control" onchange="applySettings()">
+                    <option value="#00ff00" selected>Neon Green</option>
+                    <option value="#00aaff">Laser Blue</option>
+                    <option value="#ff00ff">Fuchsia Pink</option>
+                    <option value="#ffcc00">Arcade Yellow</option>
+                </select>
+            </div>
+            
+            <!-- Dropdown Selector for Snake Body Color -->
+            <div class="setting-group">
+                <label for="body-color-setting">Body Color</label>
+                <select id="body-color-setting" class="setting-control" onchange="applySettings()">
+                    <option value="#00cc00" selected>Dark Green</option>
+                    <option value="#0088cc">Dark Blue</option>
+                    <option value="#cc00cc">Dark Pink</option>
+                    <option value="#ffa500">Orange</option>
+                </select>
+            </div>
+            
+            <!-- Dropdown Selector for Food Color -->
+            <div class="setting-group">
+                <label for="food-color-setting">Normal Food</label>
+                <select id="food-color-setting" class="setting-control" onchange="applySettings()">
+                    <option value="#ff4d4d" selected>Emergency Red</option>
+                    <option value="#f0e68c">Khaki Yellow</option>
+                    <option value="#00ff00">Bright Green</option>
+                    <option value="#ffffff">White Dot</option>
+                </select>
+            </div>
+
+            <!-- Start New Game Button -->
+            <button class="restart-setting-btn" onclick="toggleSettingsMenu(); restartGame()">START NEW GAME</button>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Game Over / Restart Message -->
+    <div id="message">
+        <h2>GAME OVER</h2>
+        <p id="final-score">Score: 0</p>
+        <button class="restart-button" onclick="restartGame()">RESTART (Space)</button>
+    </div>
+
+    <!-- Link to the JavaScript game logic file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
